@@ -34,6 +34,14 @@ package by.itstep.javatraining.revision.task;
 
 public class Task02 {
     public static String task02(int a, int b, int c, int d) {
-        return "?";
+        String message = "No arithmetic progression.";
+        if (a < b && b - a == c - b && c - b == d - c) {
+            message = "Ascending arithmetic progression.";
+        } else if (a == b && b == c && c == d) {
+            message = "Monotonic arithmetic progression.";
+        } else if (b - a == c - b && c - b == d - c){
+            message = "Descending arithmetic progression.";
+        }
+        return message;
     }
 }
