@@ -40,6 +40,15 @@ package by.itstep.javatraining.revision.task;
 
 public class Task06 {
     public static String task06(int number) {
-        return "?";
+        if (number < 0 || number > 36){
+            return "error";
+        }
+        if (number == 0){
+            return "green";
+        }
+        return number == 1 || number == 3 || number == 5 || number == 7 || number == 9
+                || number == 12 || number == 14 || number == 16 || number == 18
+                || number == 19 || number == 21 || number == 23 || number == 25
+                || number == 27 || number == 30 || number == 32 || number == 34 || number == 36 ? "red" : "black";
     }
 }
