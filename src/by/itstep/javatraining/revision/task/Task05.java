@@ -37,14 +37,10 @@ public class Task05 {
             b = x;
         }
         if (b > c) {
-            int x = b;
             b = c;
-            c = x;
         }
         if (a > b) {
-            int x = a;
-            a = b;
-            b = x;
+            b = a;
         }
         return b;
     }
