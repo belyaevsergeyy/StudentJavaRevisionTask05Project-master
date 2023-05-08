@@ -43,7 +43,7 @@ package by.itstep.javatraining.revision.task;
 public class Task07 {
     public static String task07(String color1, String color2) {
         String message = "green";
-        if (!((color1.equals("red") || color1.equals("blue") || color1.equals("yellow")) &&
+        if (color1 == null || color2 == null || !((color1.equals("red") || color1.equals("blue") || color1.equals("yellow")) &&
                 (color2.equals("blue") || color2.equals("red") || color2.equals("yellow")))) {
             return "error";
         }
