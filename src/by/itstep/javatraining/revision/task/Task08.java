@@ -42,19 +42,24 @@ package by.itstep.javatraining.revision.task;
 
 public class Task08 {
     public static String task08(int day, int month, int year) {
-        if (month == 2 && day > 29 || day < 1 || day > 31 || month < 1 || month > 12 || year < 0) {
+        int maxDay = month == 4 || month == 6 || month == 9 || month == 11 ? 30 : 31;
+        int maxDayFebr = year % 4 == 0 && year % 100 != 0 || year % 400 == 0 ? 29 : 28;
+        if (month == 2 && day > maxDayFebr || day < 1 || day > maxDay || month < 1 || month > 12 || year < 0) {
             return "Error.";
         }
-        if (month == 2){
-            if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
-                return day == 29 ? "01.03."+year :
-                        (day + 1 > 9 ? day + 1 + ".02." + year : "0" + day + 1 + ".02." + year);
+
+        if (month == 2 && day == maxDayFebr || day == maxDay) {
+            day = 1;
+            if (month == 12) {
+                month = 1;
+                ++year;
+            } else {
+                ++month;
             }
+        } else {
+            ++day;
         }
-        if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12){
-            return day == 31 ? "01.03."+year :
-                    (day + 1 > 9 ? day + 1 + ".02." + year : "0" + day + 1 + ".02." + year);
-        }
-        return "Error.";
+
+        return String.format("%02d." + "%02d." + "%04d", day, month, year);
     }
 }
