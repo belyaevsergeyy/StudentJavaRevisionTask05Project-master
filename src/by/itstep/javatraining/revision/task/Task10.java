@@ -28,6 +28,7 @@ package by.itstep.javatraining.revision.task;
 
 public class Task10 {
     public static int task10(int h, int a, int b) {
-        return 0;
+
+        return h > b && a > b ? 3 : 0;
     }
 }

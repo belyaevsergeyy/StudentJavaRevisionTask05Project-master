@@ -40,6 +40,26 @@ package by.itstep.javatraining.revision.task;
 
 public class Task09 {
     public static String task09(int a1, int b1, int a2, int b2) {
-        return "?";
+        if (a1 == b1 || a2 == b2) {
+            return "error";
+        }
+        String message = "empty set";
+        if (a1 > b1){
+            int x = a1;
+            a1 = b1;
+            b1 = x;
+        }
+        if (a2 > b2){
+            int x = a2;
+            a2 = b2;
+            b2 = x;
+        }
+        if (b1 == a2 || a1 == b2){
+            message = "point - " + Math.min(b1, b2);
+        } else if (b1 > a2 && a1 < b2) {
+            message = "segment - [" + Math.max(a1, a2) + ", " + Math.min(b1, b2) + "]";
+        }
+        return message;
+
     }
 }
