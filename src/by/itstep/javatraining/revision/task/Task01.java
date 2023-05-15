@@ -26,6 +26,16 @@ package by.itstep.javatraining.revision.task;
 
 public class Task01 {
     public static int task01(int a, int b, int c, int d) {
-        return 0;
+        if (a == b || a == c || a == d) {
+            if (a == b && a == c && a == d) {
+                return 4;
+            } else {
+                return b != c && c != d && b != d ? 2 : 3;
+            }
+        } else if (b == c) {
+            return b == d ? 3 : 2;
+        } else {
+            return c == d ? 2 : 0;
+        }
     }
 }
