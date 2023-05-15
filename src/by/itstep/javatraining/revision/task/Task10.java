@@ -28,7 +28,12 @@ package by.itstep.javatraining.revision.task;
 
 public class Task10 {
     public static int task10(int h, int a, int b) {
-
-        return h > b && a > b ? 3 : 0;
+        if (h <= b || a <= b || h < 1 || a < 1 || b < 1) {
+            return 0;
+        }
+        if (a > h) {
+            return 1;
+        }
+        return a - b == 1 ? h - b : (a - b + h) / a + 1;
     }
 }
